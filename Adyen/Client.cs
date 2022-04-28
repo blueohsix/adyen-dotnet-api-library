@@ -52,6 +52,17 @@ namespace Adyen
             this.SetEnvironment(environment);
         }
 
+        public Client(string username, string password, Environment environment, string liveEndpointUrlPrefix)
+        {
+            Config = new Config
+            {
+                Username = username,
+                Password = password,
+                Environment = environment
+            };
+            this.SetEnvironment(environment, liveEndpointUrlPrefix);
+        }
+
         public Client(string xapikey, Environment environment)
         {
             Config = new Config
